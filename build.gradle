@@ -1,0 +1,34 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.study'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+// Spring
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+// JPA
+//    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+// Lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+// H2 DataBase
+    runtimeOnly 'com.h2database:h2'
+// JUnit 5
+//    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+//        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+//    }
+}
+
+test {
+    useJUnitPlatform()
+}
