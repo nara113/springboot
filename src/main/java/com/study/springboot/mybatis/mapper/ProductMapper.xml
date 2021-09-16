@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
+
+<mapper namespace="com.study.springboot.mybatis.mapper.ProductMapper">
+    <select id="selectProductById" parameterType="long" resultType="com.study.springboot.domain.Product">
+        SELECT prod_id as prodId
+        ,prod_name as prodName
+        ,prod_price as prodPrice
+        FROM products
+        WHERE prod_id = #{id}
+    </select>
+
+    <select id="selectAllProducts" resultType="com.study.springboot.domain.Product">
+        SELECT
+        prod_id as prodId
+        ,prod_name as prodName
+        ,prod_price as prodPrice
+        FROM products
+    </select>
+
+    <insert id="insertProduct" parameterType="com.study.springboot.domain.Product">
+        INSERT INTO products (prod/name, prod_price)
+        VALUES (#{prodName}, #{prodPrice})
+    </insert>
+</mapper>

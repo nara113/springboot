@@ -1,11 +1,10 @@
 package com.study.springboot;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@MapperScan(basePackageClasses = SpringbootApplication.class)
 @SpringBootApplication
 public class SpringbootApplication {
 
@@ -13,9 +12,5 @@ public class SpringbootApplication {
         SpringApplication.run(SpringbootApplication.class, args);
     }
 
-    @GetMapping("/book")
-    public String getBookList() {
-        return "book";
-    }
 
 }
