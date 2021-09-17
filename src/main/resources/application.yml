@@ -5,6 +5,12 @@ server:
 #  mapper-locations: classpath*:mapper/*.xml
 #  type-aliases-package: com.study.springboot.domain
 
+server.error:
+  include-exception: true
+  include-stacktrace: ALWAYS # 오류 응답에 stacktrace 내용을 포함할 지 여부
+#  path: '/error' # 오류 응답을 처리할 Handler의 경로
+#  whitelabel.enabled: false # 서버 오류 발생시 브라우저에 보여줄 기본 페이지 생성 여부
+
 spring:
   datasource:
     generate-unique-name: false # db를 testdb로 고정 (jdbc:h2:mem:testdb)

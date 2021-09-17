@@ -25,8 +25,13 @@ public class ProductService {
     }
 
     @Transactional
-    public void addProduct(Product product) {
+    public void addProduct() {
+        productMapper.insertProduct(new Product("쿤달 샴푸", 7900));
 
-        productMapper.insertProduct(product);
+        if (1 == 1) {
+            throw new IllegalArgumentException("test exception");
+        }
+
+        productMapper.insertProduct(new Product("마스크팩", 1000));
     }
 }

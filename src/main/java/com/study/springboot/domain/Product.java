@@ -7,10 +7,11 @@ import org.apache.ibatis.type.Alias;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@RequiredArgsConstructor
 @Getter
 @Setter
 public class Product {
     private Long prodId;
-    private String prodName;
-    private int prodPrice;
+    @NonNull private String prodName;
+    @NonNull private int prodPrice;
 }

@@ -12,8 +12,8 @@ import java.util.List;
 
 @Service
 public class BookRestService {
-    @Autowired
-    private CategoryMapper categoryMapper;
+//    @Autowired
+//    private CategoryMapper categoryMapper;
 
     private final RestTemplate restTemplate;
 
@@ -25,7 +25,7 @@ public class BookRestService {
         return this.restTemplate.getForObject("/rest/test", Book.class);
     }
 
-    public List<Category> getCategories() {
-        return categoryMapper.selectCategories();
-    }
+//    public List<Category> getCategories() {
+//        return categoryMapper.selectCategories();
+//    }
 }

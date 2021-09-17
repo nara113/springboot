@@ -3,6 +3,7 @@ package com.study.springboot.mybatis;
 import com.study.springboot.domain.Product;
 import com.study.springboot.mybatis.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -32,8 +33,9 @@ public class ProductServiceTest {
     @Transactional
     @Test
     public void addProduct() {
-//        productService.addProduct(new Product("쿤달 샴푸", 7900));
-//        productService.addProduct(new Product("마스크팩", 1000));
-//        productService.addProduct(new Product("티셔츠", 5900));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            productService.addProduct();
+        });
+
     }
 }

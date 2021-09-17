@@ -3,11 +3,13 @@ package com.study.springboot.web.domain;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+@ToString
 @Getter
 @NoArgsConstructor
 @Entity
@@ -32,22 +34,22 @@ public class Board implements Serializable {
     private BoardType boardType;
 
     @Column
-    private LocalDateTime createDate;
+    private LocalDateTime createdDate;
 
     @Column
-    private LocalDateTime updateDate;
+    private LocalDateTime updatedDate;
 
     @OneToOne(fetch = FetchType.LAZY)
     private User user;
 
     @Builder
-    public Board(String title, String subTitle, String content, BoardType boardType, LocalDateTime createDate, LocalDateTime updateDate, User user) {
+    public Board(String title, String subTitle, String content, BoardType boardType, LocalDateTime createdDate, LocalDateTime updatedDate, User user) {
         this.title = title;
         this.subTitle = subTitle;
         this.content = content;
         this.boardType = boardType;
-        this.createDate = createDate;
-        this.updateDate = updateDate;
+        this.createdDate = createdDate;
+        this.updatedDate = updatedDate;
         this.user = user;
     }
 }

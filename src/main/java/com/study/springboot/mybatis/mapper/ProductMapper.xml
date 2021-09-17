@@ -19,7 +19,7 @@
     </select>
 
     <insert id="insertProduct" parameterType="com.study.springboot.domain.Product">
-        INSERT INTO products (prod/name, prod_price)
+        INSERT INTO products (prod_name, prod_price)
         VALUES (#{prodName}, #{prodPrice})
     </insert>
 </mapper>
